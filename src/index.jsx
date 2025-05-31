@@ -17,7 +17,10 @@ import theme from "./theme/index.js";
 
 import { useDocumentTitle } from "#utils";
 
-const LandingPage = lazy(() => import("./screens/LandingPage.jsx"));
+const Home = lazy(() => import("./screens/Home.jsx"));
+const About = lazy(() => import("./screens/About.jsx"));
+const Settings = lazy(() => import("./screens/Settings.jsx"));
+const NotFound = lazy(() => import("./screens/NotFound.jsx"));
 
 function at(n) {
 	n = Math.trunc(n) || 0;
@@ -88,8 +91,11 @@ const App = () => {
 												)}
 											>
 												<Routes>
-													<Route path="/landing_page" element={<LandingPage />} />
-													<Route path="*" element={<LandingPage />} />
+												<Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/settings" element={<Settings />} />
+      {/* Add more feature‐based routes here */}
+      <Route path="*" element={<NotFound />} />
 												</Routes>
 											</Suspense>
 										</main>
