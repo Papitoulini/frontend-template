@@ -1,18 +1,16 @@
-import { lazy, StrictMode, Suspense, useEffect } from "react";
-import { createRoot } from "react-dom/client";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Box, CircularProgress, CssBaseline, Grid } from "@mui/material";
 import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { ErrorBoundary } from "react-error-boundary";
-import { Box, CircularProgress, CssBaseline, Grid } from "@mui/material";
-
 import * as Sentry from "@sentry/react";
+import { lazy, StrictMode, Suspense, useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import { ErrorBoundary } from "react-error-boundary";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 import "./index.scss";
 
 import ErrorFallback from "./components/ErrorFallback.jsx";
-
 import theme from "./theme/index.js";
 
 import { useDocumentTitle } from "#utils";
@@ -67,6 +65,7 @@ const App = () => {
 				registration.unregister();
 
 				if (caches) {
+					// eslint-disable-next-line promise/no-nesting
 					caches.keys().then(async (names) => {
 						await Promise.all(names.map((name) => caches.delete(name)));
 					});

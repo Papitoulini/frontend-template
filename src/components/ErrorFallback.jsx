@@ -1,5 +1,5 @@
-import { Button, Grid, Typography } from "@mui/material";
 import { ArrowBack, Refresh } from "@mui/icons-material";
+import { Button, Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const ErrorFallback = () => {

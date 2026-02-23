@@ -1,12 +1,11 @@
 // src/components/Layout/Footer.jsx
-import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 
 function Footer() {
-  return (
+	return (
     <Box
-      component="footer"
-      sx={{
+	component="footer"
+	sx={{
         py: 2,
         mt: 'auto',
         backgroundColor: (theme) => theme.palette.background.paper,
@@ -18,7 +17,7 @@ function Footer() {
         </Typography>
       </Container>
     </Box>
-  );
+	);
 }
 
 export default Footer;

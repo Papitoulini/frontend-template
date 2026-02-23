@@ -1,11 +1,11 @@
 // src/components/Layout/Layout.jsx
-import React from 'react';
 import { Box, Container } from '@mui/material';
-import Header from './Header';
+
 import Footer from './Footer';
+import Header from './Header';
 
 function Layout({ children }) {
-  return (
+	return (
     <Box display="flex" minHeight="100vh" flexDirection="column">
       <Header />
       <Box component="main" flex="1">
@@ -15,7 +15,7 @@ function Layout({ children }) {
       </Box>
       <Footer />
     </Box>
-  );
+	);
 }
 
 export default Layout;
