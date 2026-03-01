@@ -1,0 +1,17 @@
+const colors = {
+	primary: "#00426E",
+	secondary: "#00CBC4",
+	third: "#D13173",
+	success: "#9BCB3F",
+	error: "#EF4930",
+	warning: "#FAB325",
+	info: "#006BA4",
+	dark: "#262835",
+	light: "#F1A542",
+	grey: "#DBDFE1",
+	greyLight: "#F5F5F5",
+	greyDark: "#BAC1C5",
+	green: "#ff0000",
+};
+
+export default colors;

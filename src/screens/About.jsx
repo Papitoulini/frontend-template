@@ -1,16 +1,13 @@
-// src/pages/About.jsx
-import { Typography } from '@mui/material';
+import { Accordion, Dialog, Popup, Tooltip } from "../microcomponents/index.js";
 
 function About() {
 	return (
-    <div>
-      <Typography variant="h4" gutterBottom>
-        About This Project
-      </Typography>
-      <Typography variant="body1">
-        This is a sample React app built with Vite and MUI to demonstrate a well-structured boilerplate.
-      </Typography>
-    </div>
+		<>
+			<Accordion />
+			<Tooltip />
+			<Dialog />
+			<Popup />
+		</>
 	);
 }
 

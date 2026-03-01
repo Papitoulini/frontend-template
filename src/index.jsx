@@ -11,7 +11,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import "./index.scss";
 
 import ErrorFallback from "./components/ErrorFallback.jsx";
-import theme from "./theme/index.js";
+import theme from "./theme.js";
 
 import { useDocumentTitle } from "#utils";
 
@@ -90,11 +90,10 @@ const App = () => {
 												)}
 											>
 												<Routes>
-												<Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/settings" element={<Settings />} />
-      {/* Add more feature‐based routes here */}
-      <Route path="*" element={<NotFound />} />
+													<Route path="/" element={<Home />} />
+													<Route path="/about" element={<About />} />
+													<Route path="/settings" element={<Settings />} />
+													<Route path="*" element={<NotFound />} />
 												</Routes>
 											</Suspense>
 										</main>
