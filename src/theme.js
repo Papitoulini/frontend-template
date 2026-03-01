@@ -28,11 +28,11 @@ const theme = createTheme({
 		white: { main: "#ffffff" },
 	},
 	typography: {
-		fontFamily: "Commissioner, serif",
+		fontFamily: "\"Public Sans\", \"Segoe UI\", sans-serif",
 	},
 	shape: {
-		borderRadius: "5px",
-	}
+		borderRadius: 10,
+	},
 });
 
 export default theme;
