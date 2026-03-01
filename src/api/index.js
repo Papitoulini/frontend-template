@@ -52,11 +52,11 @@ export default api;
 
 const is = (data, error) => ({ isLoading: !error && !data, isError: Boolean(error) });
 
-export const useProjects = (shouldTry = true, includeHidden = true) => {
-	const url = "panorama/projects/";
+export const useExample = (shouldTry = true, includeHidden = true) => {
+	const url = "example/";
 	const { data, error, mutate } = useSWR(shouldTry
 		? [url, includeHidden] : null, () => api.get(url, { includeHidden }));
-	return { projects: data, ...is(data, error), mutate };
+	return { example: data, ...is(data, error), mutate };
 };
 
 export const authenticate = (username, password) => api.post("authenticate", { username, password });
