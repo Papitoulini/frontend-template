@@ -1,12 +1,68 @@
-# React + Vite
+# Frontend Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React 19 + Vite frontend starter with Material UI, module federation, and a small API client layer. It is set up to consume shared remote microcomponents and run as a host app.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19 app bootstrapped with Vite
+- Material UI + Emotion theming
+- Module Federation host for remote `microcomponents`
+- Client-side routing with `react-router-dom`
+- API wrapper built on `ky` with token refresh handling
+- SWR-based example data hook
+- Sentry client initialization in the app entrypoint
 
-## Expanding the ESLint configuration
+## 📦 Install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+## 🚀 Quickstart
+
+1. Review the values in `.env`.
+2. Start the dev server.
+
+```bash
+npm run dev
+```
+
+By default the app runs on `http://localhost:3002`.
+
+## 🧱 What’s inside
+
+- `src/index.jsx`: app bootstrap, routing, theme providers, Sentry setup
+- `src/api/`: shared HTTP client and example SWR hook
+- `src/microcomponents/`: remote component loaders and exports
+- `src/screens/`: route-level screens (`Home`, `About`, `NotFound`, `Settings`)
+- `src/theme.js`, `src/colors.js`, `src/index.scss`: theme and global styling
+- `vite.config.js`: Vite config, env loading, and module federation setup
+
+## ⚙️ Customising
+
+- `VITE_PUBLIC_PORT`: local dev server port
+- `VITE_MICROCOMPONENTS_URL`: remote module federation entry URL
+- `VITE_APP_MAIN_SERVER_URL`: API server base URL; when set, requests are sent to `<value>/api`
+
+If `VITE_APP_MAIN_SERVER_URL` is empty, the API client falls back to relative `/api` requests.
+
+## 🧪 Scripts
+
+- `npm run dev`: start the Vite dev server
+- `npm run build`: create a production build
+- `npm run preview`: preview the production build locally
+- `npm run lint`: run ESLint with zero warnings allowed
+
+## 🔁 Publish flow (develop → master)
+
+No repository-specific branch promotion or release flow is documented here. If you use `develop` and `master`, validate changes locally before merging forward.
+
+## 🤝 Contributing
+
+- Keep changes focused and small
+- Run `npm run lint` before opening a PR
+- Run `npm run build` before merging changes that affect runtime behavior
+
+## 📝 License
+
+No license file is included in this repository.

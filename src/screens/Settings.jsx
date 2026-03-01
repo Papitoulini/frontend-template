@@ -1,16 +1,13 @@
-// src/pages/Settings.jsx
-import React from 'react';
-import { Typography } from '@mui/material';
+import {
+	Input,
+} from "../microcomponents/index.js";
 
 function Settings() {
-  return (
-    <div>
-      <Typography variant="h4" gutterBottom>
-        Settings
-      </Typography>
-      <Typography variant="body1">User preferences will go here.</Typography>
-    </div>
-  );
+	return (
+		<>
+			<Input />
+		</>
+	);
 }
 
 export default Settings;

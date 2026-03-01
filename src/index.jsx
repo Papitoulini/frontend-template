@@ -1,25 +1,23 @@
-import { lazy, StrictMode, Suspense, useEffect } from "react";
-import { createRoot } from "react-dom/client";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Home as HomeIcon, Info as InfoIcon } from '@mui/icons-material';
+import { Box, CircularProgress, CssBaseline, Grid } from "@mui/material";
 import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { ErrorBoundary } from "react-error-boundary";
-import { Box, CircularProgress, CssBaseline, Grid } from "@mui/material";
-
 import * as Sentry from "@sentry/react";
+import { lazy, StrictMode, Suspense, useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import { ErrorBoundary } from "react-error-boundary";
+import { Route, Routes, BrowserRouter as Router, useLocation, useNavigate } from "react-router-dom";
 
+import logo from "./assets/logo.svg";
 import "./index.scss";
+import theme from "./theme.js";
 
-import ErrorFallback from "./components/ErrorFallback.jsx";
-
-import theme from "./theme/index.js";
-
+import { ErrorFallback, Header, Footer } from "#microcomponents";
 import { useDocumentTitle } from "#utils";
 
 const Home = lazy(() => import("./screens/Home.jsx"));
 const About = lazy(() => import("./screens/About.jsx"));
-const Settings = lazy(() => import("./screens/Settings.jsx"));
 const NotFound = lazy(() => import("./screens/NotFound.jsx"));
 
 function at(n) {
@@ -59,7 +57,14 @@ Sentry.init({
 });
 
 const App = () => {
-	useDocumentTitle("Papito");
+	useDocumentTitle("Frontend Template");
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	const headerButtons = [
+		{ text: "Home", icon: HomeIcon, path: "/" },
+		{ text: "About", icon: InfoIcon, path: "/about" },
+	];
 
 	useEffect(() => {
 		if ("serviceWorker" in navigator) {
@@ -67,6 +72,7 @@ const App = () => {
 				registration.unregister();
 
 				if (caches) {
+					// eslint-disable-next-line promise/no-nesting
 					caches.keys().then(async (names) => {
 						await Promise.all(names.map((name) => caches.delete(name)));
 					});
@@ -90,13 +96,22 @@ const App = () => {
 													</Box>
 												)}
 											>
+															<Header
+																isAuthenticated
+																location={location}
+																navigate={navigate}
+																buttons={headerButtons}
+																homeLink="/"
+																logo={logo}
+															/>
 												<Routes>
-												<Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/settings" element={<Settings />} />
-      {/* Add more feature‐based routes here */}
-      <Route path="*" element={<NotFound />} />
+													<Route path="/" element={<Home />} />
+													<Route path="/about" element={<About />} />
+													<Route path="*" element={<NotFound />} />
 												</Routes>
+												<Footer
+													logo={logo}
+												/>
 											</Suspense>
 										</main>
 									</Grid>
