@@ -1,3 +1,4 @@
+import { Home as HomeIcon, Info as InfoIcon } from '@mui/icons-material';
 import { Box, CircularProgress, CssBaseline, Grid } from "@mui/material";
 import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -61,8 +62,8 @@ const App = () => {
 	const location = useLocation();
 
 	const headerButtons = [
-		{ text: "Home", path: "" },
-		{ text: "About", path: "/about" },
+		{ text: "Home", icon: HomeIcon, path: "/" },
+		{ text: "About", icon: InfoIcon, path: "/about" },
 	];
 
 	useEffect(() => {
