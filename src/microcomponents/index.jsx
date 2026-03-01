@@ -6,110 +6,57 @@ import withTheme, { SuspenseSpinner, WithSuspense } from "./remoteComponentLoade
 // ============================================================================
 // BUTTONS
 // ============================================================================
-const PrimaryBackgroundButton = withTheme(
-	() => import("microcomponents/Buttons"),
-	"PrimaryBackgroundButton"
-);
+const PrimaryBackgroundButton = withTheme(() => import("microcomponents/Buttons"),"PrimaryBackgroundButton");
+const PrimaryBorderButton = withTheme(() => import("microcomponents/Buttons"), "PrimaryBorderButton");
+const SecondaryBackgroundButton = withTheme(() => import("microcomponents/Buttons"), "SecondaryBackgroundButton");
+const ThirdBackgroundButton = withTheme(() => import("microcomponents/Buttons"), "ThirdBackgroundButton");
 
-// const PrimaryBorderButton = withTheme(
-// 	() => import("microcomponents/Buttons"),
-// 	"PrimaryBorderButton"
-// );
+// ============================================================================
+// ACCORDION
+// ============================================================================
+const Accordion = withTheme(() => import("microcomponents/Accordion"));
 
-// const SecondaryBackgroundButton = withTheme(
-// 	() => import("microcomponents/Buttons"),
-// 	"SecondaryBackgroundButton"
-// );
+// ============================================================================
+// AUTOCOMPLETE
+// ============================================================================
+const PrimaryBackgroundAutocomplete = withTheme(() => import("microcomponents/Autocomplete"), "PrimaryBackgroundAutocomplete");
 
-// const ThirdBackgroundButton = withTheme(
-// 	() => import("microcomponents/Buttons"),
-// 	"ThirdBackgroundButton"
-// );
-
-// // ============================================================================
-// // ACCORDION
-// // ============================================================================
-// const Accordion = withTheme(() => import("microcomponents/Accordion"));
-
-// // ============================================================================
-// // AUTOCOMPLETE
-// // ============================================================================
-// const PrimaryBackgroundAutocomplete = withTheme(
-// 	() => import("microcomponents/Autocomplete"),
-// 	"PrimaryBackgroundAutocomplete"
-// );
-
-// const PrimaryBorderAutocomplete = withTheme(
-// 	() => import("microcomponents/Autocomplete"),
-// 	"PrimaryBorderAutocomplete"
-// );
+const PrimaryBorderAutocomplete = withTheme(() => import("microcomponents/Autocomplete"), "PrimaryBorderAutocomplete");
 
 // ============================================================================
 // CARD
 // ============================================================================
 const Card = withTheme(() => import("microcomponents/Card"));
 
-// // ============================================================================
-// // CHECKBOXES
-// // ============================================================================
-// const PrimaryCheckbox = withTheme(
-// 	() => import("microcomponents/Checkbox"),
-// 	"PrimaryCheckbox"
-// );
+// ============================================================================
+// CHECKBOXES
+// ============================================================================
+const PrimaryCheckbox = withTheme(() => import("microcomponents/Checkbox"), "PrimaryCheckbox");
+const SecondaryCheckbox = withTheme(() => import("microcomponents/Checkbox"), "SecondaryCheckbox");
+const ThirdCheckbox = withTheme(() => import("microcomponents/Checkbox"), "ThirdCheckbox");
 
-// const SecondaryCheckbox = withTheme(
-// 	() => import("microcomponents/Checkbox"),
-// 	"SecondaryCheckbox"
-// );
+// ============================================================================
+// CHECKBOXES DROPDOWN
+// ============================================================================
+const PrimaryBackgroundCheckboxesDropdown = withTheme(() => import("microcomponents/CheckboxesDropdown"), "PrimaryBackgroundCheckboxesDropdown");
+const PrimaryBorderCheckboxesDropdown = withTheme(() => import("microcomponents/CheckboxesDropdown"), "PrimaryBorderCheckboxesDropdown");
 
-// const ThirdCheckbox = withTheme(
-// 	() => import("microcomponents/Checkbox"),
-// 	"ThirdCheckbox"
-// );
+// ============================================================================
+// DATEPICKERS
+// ============================================================================
+const PrimaryBackgroundDatepicker = withTheme(() => import("microcomponents/Datepicker"), "PrimaryBackgroundDatepicker");
+const PrimaryBorderDatepicker = withTheme(() => import("microcomponents/Datepicker"), "PrimaryBorderDatepicker");
 
-// // ============================================================================
-// // CHECKBOXES DROPDOWN
-// // ============================================================================
-// const PrimaryBackgroundCheckboxesDropdown = withTheme(
-// 	() => import("microcomponents/CheckboxesDropdown"),
-// 	"PrimaryBackgroundCheckboxesDropdown"
-// );
+// ============================================================================
+// DIALOG
+// ============================================================================
+const Dialog = withTheme(() => import("microcomponents/Dialog"));
 
-// const PrimaryBorderCheckboxesDropdown = withTheme(
-// 	() => import("microcomponents/CheckboxesDropdown"),
-// 	"PrimaryBorderCheckboxesDropdown"
-// );
-
-// // ============================================================================
-// // DATEPICKERS
-// // ============================================================================
-// const PrimaryBackgroundDatepicker = withTheme(
-// 	() => import("microcomponents/Datepicker"),
-// 	"PrimaryBackgroundDatepicker"
-// );
-
-// const PrimaryBorderDatepicker = withTheme(
-// 	() => import("microcomponents/Datepicker"),
-// 	"PrimaryBorderDatepicker"
-// );
-
-// // ============================================================================
-// // DIALOG
-// // ============================================================================
-// const Dialog = withTheme(() => import("microcomponents/Dialog"));
-
-// // ============================================================================
-// // DROPDOWNS
-// // ============================================================================
-// const PrimaryBackgroundDropdown = withTheme(
-// 	() => import("microcomponents/Dropdowns"),
-// 	"PrimaryBackgroundDropdown"
-// );
-
-// const PrimaryBorderDropdown = withTheme(
-// 	() => import("microcomponents/Dropdowns"),
-// 	"PrimaryBorderDropdown"
-// );
+// ============================================================================
+// DROPDOWNS
+// ============================================================================
+const PrimaryBackgroundDropdown = withTheme(() => import("microcomponents/Dropdowns"),"PrimaryBackgroundDropdown");
+const PrimaryBorderDropdown = withTheme(() => import("microcomponents/Dropdowns"),"PrimaryBorderDropdown");
 
 // ============================================================================
 // ERROR FALLBACK
@@ -134,101 +81,68 @@ const Spinner = withTheme(() => import("microcomponents/Spinner"));
 // ============================================================================
 // TOOLTIP
 // ============================================================================
-// const Tooltip = withTheme(() => import("microcomponents/Tooltip"));
+const Tooltip = withTheme(() => import("microcomponents/Tooltip"));
 
-// // ============================================================================
-// // SWITCHES
-// // ============================================================================
-// const PrimarySwitch = withTheme(
-// 	() => import("microcomponents/Switches"),
-// 	"PrimarySwitch"
-// );
+// ============================================================================
+// SWITCHES
+// ============================================================================
+const PrimarySwitch = withTheme(() => import("microcomponents/Switches"),"PrimarySwitch");
+const SecondarySwitch = withTheme(() => import("microcomponents/Switches"),"SecondarySwitch");
+const ThirdSwitch = withTheme(() => import("microcomponents/Switches"),"ThirdSwitch");
 
-// const SecondarySwitch = withTheme(
-// 	() => import("microcomponents/Switches"),
-// 	"SecondarySwitch"
-// );
+// ============================================================================
+// SLIDERS
+// ============================================================================
+const PrimarySlider = withTheme(() => import("microcomponents/Slider"), "PrimarySlider");
+const SecondarySlider = withTheme(() => import("microcomponents/Slider"), "SecondarySlider");
+const ThirdSlider = withTheme(() => import("microcomponents/Slider"), "ThirdSlider");
 
-// const ThirdSwitch = withTheme(
-// 	() => import("microcomponents/Switches"),
-// 	"ThirdSwitch"
-// );
+// ============================================================================
+// POPUP
+// ============================================================================
+const Popup = withTheme(() => import("microcomponents/Popup"));
 
-// // ============================================================================
-// // SLIDERS
-// // ============================================================================
-// const PrimarySlider = withTheme(
-// 	() => import("microcomponents/Slider"),
-// 	"PrimarySlider"
-// );
+// ============================================================================
+// SEARCH
+// ============================================================================
+const Search = withTheme(() => import("microcomponents/Search"));
 
-// const SecondarySlider = withTheme(
-// 	() => import("microcomponents/Slider"),
-// 	"SecondarySlider"
-// );
+// ============================================================================
+// PLOT
+// ============================================================================
+const Plot = withTheme(() => import("microcomponents/Plot"));
 
-// const ThirdSlider = withTheme(
-// 	() => import("microcomponents/Slider"),
-// 	"ThirdSlider"
-// );
+// ============================================================================
+// RADIO BUTTONS
+// ============================================================================
+const PrimaryRadioButtons = withTheme(() => import("microcomponents/RadioButtons"), "PrimaryRadioButtons");
+const SecondaryRadioButtons = withTheme(() => import("microcomponents/RadioButtons"), "SecondaryRadioButtons");
+const ThirdRadioButtons = withTheme(() => import("microcomponents/RadioButtons"), "ThirdRadioButtons");
 
-// // ============================================================================
-// // POPUP
-// // ============================================================================
-// const Popup = withTheme(() => import("microcomponents/Popup"));
+// ============================================================================
+// MAP
+// ============================================================================
+const Map = withTheme(() => import("microcomponents/Map"));
 
-// // ============================================================================
-// // SEARCH
-// // ============================================================================
-// const Search = withTheme(() => import("microcomponents/Search"));
+// ============================================================================
+// LEADERBOARD
+// ============================================================================
+const Leaderboard = withTheme(() => import("microcomponents/Leaderboard"));
 
-// // ============================================================================
-// // PLOT
-// // ============================================================================
-// const Plot = withTheme(() => import("microcomponents/Plot"));
+// ============================================================================
+// FORM
+// ============================================================================
+const Form = withTheme(() => import("microcomponents/Form"));
 
-// // ============================================================================
-// // RADIO BUTTONS
-// // ============================================================================
-// const PrimaryRadioButtons = withTheme(
-// 	() => import("microcomponents/RadioButtons"),
-// 	"PrimaryRadioButtons"
-// );
+// ============================================================================
+// FILE UPLOAD
+// ============================================================================
+const FileUpload = withTheme(() => import("microcomponents/FileUpload"));
 
-// const SecondaryRadioButtons = withTheme(
-// 	() => import("microcomponents/RadioButtons"),
-// 	"SecondaryRadioButtons"
-// );
-
-// const ThirdRadioButtons = withTheme(
-// 	() => import("microcomponents/RadioButtons"),
-// 	"ThirdRadioButtons"
-// );
-
-// // ============================================================================
-// // MAP
-// // ============================================================================
-// const Map = withTheme(() => import("microcomponents/Map"));
-
-// // ============================================================================
-// // LEADERBOARD
-// // ============================================================================
-// const Leaderboard = withTheme(() => import("microcomponents/Leaderboard"));
-
-// // ============================================================================
-// // FORM
-// // ============================================================================
-// const Form = withTheme(() => import("microcomponents/Form"));
-
-// // ============================================================================
-// // FILE UPLOAD
-// // ============================================================================
-// const FileUpload = withTheme(() => import("microcomponents/FileUpload"));
-
-// // ============================================================================
-// // TABLE
-// // ============================================================================
-// const Table = withTheme(() => import("microcomponents/Table"));
+// ============================================================================
+// TABLE
+// ============================================================================
+const Table = withTheme(() => import("microcomponents/Table"));
 
 // ============================================================================
 // HEADER
@@ -245,39 +159,39 @@ export {
 
 	// Buttons
 	PrimaryBackgroundButton,
-	// PrimaryBorderButton,
-	// SecondaryBackgroundButton,
-	// ThirdBackgroundButton,
+	PrimaryBorderButton,
+	SecondaryBackgroundButton,
+	ThirdBackgroundButton,
 
 	// Accordion
-	// Accordion,
+	Accordion,
 
 	// Autocomplete
-	// PrimaryBackgroundAutocomplete,
-	// PrimaryBorderAutocomplete,
+	PrimaryBackgroundAutocomplete,
+	PrimaryBorderAutocomplete,
 
 	// Card
 	Card,
 
 	// Checkboxes
-	// PrimaryCheckbox,
-	// SecondaryCheckbox,
-	// ThirdCheckbox,
+	PrimaryCheckbox,
+	SecondaryCheckbox,
+	ThirdCheckbox,
 
 	// Checkboxes Dropdown
-	// PrimaryBackgroundCheckboxesDropdown,
-	// PrimaryBorderCheckboxesDropdown,
+	PrimaryBackgroundCheckboxesDropdown,
+	PrimaryBorderCheckboxesDropdown,
 
 	// Datepickers
-	// PrimaryBackgroundDatepicker,
-	// PrimaryBorderDatepicker,
+	PrimaryBackgroundDatepicker,
+	PrimaryBorderDatepicker,
 
 	// Dialog
-	// Dialog,
+	Dialog,
 
 	// Dropdowns
-	// PrimaryBackgroundDropdown,
-	// PrimaryBorderDropdown,
+	PrimaryBackgroundDropdown,
+	PrimaryBorderDropdown,
 
 	// Error Fallback
 	ErrorFallback,
@@ -292,46 +206,46 @@ export {
 	Spinner,
 
 	// Tooltip
-	// Tooltip,
+	Tooltip,
 
 	// Switches
-	// PrimarySwitch,
-	// SecondarySwitch,
-	// ThirdSwitch,
+	PrimarySwitch,
+	SecondarySwitch,
+	ThirdSwitch,
 
 	// Sliders
-	// PrimarySlider,
-	// SecondarySlider,
-	// ThirdSlider,
+	PrimarySlider,
+	SecondarySlider,
+	ThirdSlider,
 
 	// Popup
-	// Popup,
+	Popup,
 
 	// Search
-	// Search,
+	Search,
 
 	// Plot
-	// Plot,
+	Plot,
 
 	// Radio Buttons
-	// PrimaryRadioButtons,
-	// SecondaryRadioButtons,
-	// ThirdRadioButtons,
+	PrimaryRadioButtons,
+	SecondaryRadioButtons,
+	ThirdRadioButtons,
 
 	// Map
-	// Map,
+	Map,
 
 	// Leaderboard
-	// Leaderboard,
+	Leaderboard,
 
 	// Form
-	// Form,
+	Form,
 
 	// File Upload
-	// FileUpload,
+	FileUpload,
 
 	// Table
-	// Table,
+	Table,
 
 	// Header
 	Header,

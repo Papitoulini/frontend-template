@@ -1,4 +1,4 @@
-import { Footer, Spinner } from "../microcomponents/index.js";
+import { Footer, Spinner } from "#microcomponents";
 
 function NotFound() {
 	return (
