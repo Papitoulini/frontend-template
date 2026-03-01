@@ -6,18 +6,17 @@ import * as Sentry from "@sentry/react";
 import { lazy, StrictMode, Suspense, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { ErrorBoundary } from "react-error-boundary";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router, useLocation, useNavigate } from "react-router-dom";
 
+import logo from "./assets/logo.svg";
 import "./index.scss";
-
-import ErrorFallback from "./components/ErrorFallback.jsx";
 import theme from "./theme.js";
 
+import { ErrorFallback, Header, Footer } from "#microcomponents";
 import { useDocumentTitle } from "#utils";
 
 const Home = lazy(() => import("./screens/Home.jsx"));
 const About = lazy(() => import("./screens/About.jsx"));
-const Settings = lazy(() => import("./screens/Settings.jsx"));
 const NotFound = lazy(() => import("./screens/NotFound.jsx"));
 
 function at(n) {
@@ -57,7 +56,14 @@ Sentry.init({
 });
 
 const App = () => {
-	useDocumentTitle("Papito");
+	useDocumentTitle("Frontend Template");
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	const headerButtons = [
+		{ text: "Home", path: "" },
+		{ text: "About", path: "/about" },
+	];
 
 	useEffect(() => {
 		if ("serviceWorker" in navigator) {
@@ -89,12 +95,22 @@ const App = () => {
 													</Box>
 												)}
 											>
+															<Header
+																isAuthenticated
+																location={location}
+																navigate={navigate}
+																buttons={headerButtons}
+																homeLink="/"
+																logo={logo}
+															/>
 												<Routes>
 													<Route path="/" element={<Home />} />
 													<Route path="/about" element={<About />} />
-													<Route path="/settings" element={<Settings />} />
 													<Route path="*" element={<NotFound />} />
 												</Routes>
+												<Footer
+													logo={logo}
+												/>
 											</Suspense>
 										</main>
 									</Grid>
